@@ -2,7 +2,7 @@ var app = angular.module("myapp", []).controller(
 		"myController",
 		function($scope, $http) {
 
-			var BASE_PATH = "http://localhost:8080/onlineShop";
+			var BASE_PATH = "http://localhost:8080/onlineShopping";
 
 			$scope.getProductList = function() {
 				$http.get(BASE_PATH + "/getProductsList")
@@ -21,7 +21,6 @@ var app = angular.module("myapp", []).controller(
 			$scope.refreshCart = function() {
 				$http.get(BASE_PATH + "/cart/getCart/"
 								+ $scope.cartId).success(function(data) {
-
 					$scope.carts = data;
 				})
 			}
